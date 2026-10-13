@@ -1,4 +1,4 @@
-# Meus Gastos
+# My Expenses
 
 A personal expense tracker for fixed and variable spending, organized by month and category. It is a static, installable web app (PWA): no sign-up, no backend, works offline after the first load.
 
