@@ -1,5 +1,7 @@
 # My Expenses
 
+<p align="center"><img src="screenshot.png" alt="My Expenses app on a phone screen" width="260"></p>
+
 A personal expense tracker for fixed and variable spending, organized by month and category. It is a static, installable web app (PWA): no sign-up, no backend, works offline after the first load.
 
 ## Features
