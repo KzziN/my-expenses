@@ -1,0 +1,12 @@
+MEUS GASTOS — APP PESSOAL
+
+O aplicativo abre pelo endereço temporário enviado nesta conversa. No iPhone:
+1. Abra o link no Safari.
+2. Toque em Compartilhar > Adicionar à Tela de Início.
+3. Ative “Abrir como App da Web” e toque em Adicionar.
+
+O endereço é temporário e funciona enquanto o computador e a conexão do servidor estiverem ativos. Qualquer pessoa com o link consegue abrir a tela do app. Os gastos ficam no armazenamento local do navegador e não são enviados ao servidor. Não compartilhe o link.
+
+O app oferece registro de gastos fixos e aleatórios, categorias, totais por mês, histórico, exclusão e exportação/importação de backup.
+
+Faça backup periodicamente e guarde o arquivo no app Arquivos ou iCloud Drive. Limpar os dados do Safari pode apagar os registros locais.

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#174b3d">
+  <meta name="description" content="Seus gastos organizados, mês a mês.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Meus gastos</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">↗</span><span>meus gastos</span></div>
+      <button class="icon-button" id="restoreButton" aria-label="Restaurar backup" title="Importar backup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M5 17v3h14v-3"/></svg></button><button class="icon-button" id="backupButton" aria-label="Fazer backup" title="Exportar backup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></button>
+    </header>
+
+    <section class="month-row" aria-label="Mês selecionado">
+      <button class="month-arrow" id="prevMonth" aria-label="Mês anterior">‹</button>
+      <div><p class="eyebrow">VISÃO DO MÊS</p><h1 id="monthLabel">—</h1></div>
+      <button class="month-arrow" id="nextMonth" aria-label="Próximo mês">›</button>
+    </section>
+
+    <section class="total-card" aria-label="Total gasto no mês">
+      <div class="total-top"><span>Total registrado</span><span class="live-dot"></span></div>
+      <p class="total-value" id="monthTotal">R$ 0,00</p>
+      <div class="total-bottom"><span id="entryCount">0 gastos</span><span id="monthlyCaption">neste mês</span></div>
+      <div class="total-decoration" aria-hidden="true">R$</div>
+    </section>
+
+    <section class="split-section" aria-label="Gastos por tipo">
+      <div class="section-heading"><h2>Como está dividido</h2><span class="muted" id="monthShort">—</span></div>
+      <div class="split-grid">
+        <article class="split-card"><div class="split-title"><span class="type-icon fixed-icon">↻</span><span>Fixos</span></div><strong id="fixedTotal">R$ 0,00</strong><div class="meter"><span id="fixedMeter"></span></div></article>
+        <article class="split-card"><div class="split-title"><span class="type-icon random-icon">✳</span><span>Aleatórios</span></div><strong id="randomTotal">R$ 0,00</strong><div class="meter random-meter"><span id="randomMeter"></span></div></article>
+      </div>
+    </section>
+
+    <section class="activity-section">
+      <div class="section-heading"><h2>Gastos do mês</h2><span class="muted" id="listCount">0 itens</span></div>
+      <div id="expenseList" class="expense-list"></div>
+      <div id="emptyState" class="empty-state"><div class="empty-illustration" aria-hidden="true">＋</div><strong>Nenhum gasto por aqui</strong><p>Registre o primeiro e acompanhe seu mês.</p></div>
+    </section>
+
+    <footer class="privacy-note"><span aria-hidden="true">◉</span> Seus dados ficam salvos neste aparelho.</footer>
+  </main>
+
+  <button class="add-button" id="addButton"><span aria-hidden="true">＋</span> Novo gasto</button>
+
+  <dialog id="expenseDialog" class="expense-dialog">
+    <form id="expenseForm" method="dialog">
+      <div class="dialog-handle"></div>
+      <div class="dialog-heading"><div><p class="eyebrow">NOVO REGISTRO</p><h2>Adicionar gasto</h2></div><button type="button" class="close-button" id="closeDialog" aria-label="Fechar">×</button></div>
+      <label class="field-label" for="description">O que você pagou?</label>
+      <input id="description" name="description" placeholder="Ex.: mercado, aluguel" maxlength="60" required autocomplete="off">
+      <div class="field-row"><div class="field"><label class="field-label" for="amount">Valor</label><div class="money-input"><span>R$</span><input id="amount" name="amount" inputmode="decimal" placeholder="0,00" required></div></div><div class="field"><label class="field-label" for="date">Data</label><input id="date" name="date" type="date" required></div></div>
+      <span class="field-label">Tipo de gasto</span>
+      <div class="type-choice"><label><input type="radio" name="type" value="fixed" checked><span class="choice-content"><span class="type-icon fixed-icon">↻</span><span><b>Fixo</b><small>contas e mensalidades</small></span></span></label><label><input type="radio" name="type" value="random"><span class="choice-content"><span class="type-icon random-icon">✳</span><span><b>Aleatório</b><small>compras e imprevistos</small></span></span></label></div>
+      <label class="field-label" for="category">Categoria</label>
+      <select id="category" name="category"><option>Moradia</option><option>Contas</option><option>Alimentação</option><option>Transporte</option><option>Saúde</option><option>Lazer</option><option>Compras</option><option>Outros</option></select>
+      <button class="submit-button" type="submit">Salvar gasto <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
+  <input type="file" id="restoreFile" accept="application/json,.json" hidden>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
