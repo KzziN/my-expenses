@@ -1,36 +1,36 @@
 # Meus Gastos
 
-App pessoal para controlar gastos fixos e aleatórios, organizado por mês e categoria. Funciona como um site instalável (PWA), sem cadastro e sem servidor.
+A personal expense tracker for fixed and variable spending, organized by month and category. It is a static, installable web app (PWA): no sign-up, no backend, works offline after the first load.
 
-## Funcionalidades
+## Features
 
-- Registro de gastos **fixos** e **aleatórios**
-- Categorias e totais por mês
-- Histórico com exclusão de registros
-- Exportação e importação de backup em arquivo
-- Funciona offline depois do primeiro acesso (service worker)
-- Instalável na tela inicial do celular ou do computador
+- Log **fixed** and **variable** expenses
+- Categories and monthly totals
+- History with per-entry deletion
+- Export and import backups as a file
+- Works offline after the first visit (service worker)
+- Installable on phone or desktop home screen
 
-## Como rodar
+## Running locally
 
-Não há build nem dependências. Basta servir a pasta com qualquer servidor estático:
+There is no build step and no dependencies. Serve the folder with any static server:
 
 ```bash
 npx serve .
 ```
 
-Ou abra `index.html` direto no navegador para uma prévia. Para instalar como app, sirva por HTTPS ou `localhost`.
+Or open `index.html` directly in a browser for a quick preview. To install it as an app, serve it over HTTPS or `localhost`.
 
-## Privacidade
+## Privacy
 
-Os gastos ficam no **armazenamento local do navegador** (`localStorage`). Nada é enviado para servidor. Por isso, limpar os dados do navegador apaga os registros: use a exportação de backup com frequência.
+Expenses are stored only in the browser's `localStorage`. Nothing is sent to a server. Clearing browser data deletes the records, so export a backup regularly.
 
-## Estrutura
+## Project structure
 
-| Arquivo | Função |
+| File | Purpose |
 |---|---|
-| `index.html` | Estrutura da tela e diálogo de novo gasto |
-| `app.js` | Regras de negócio, renderização e armazenamento |
-| `styles.css` | Estilo visual |
-| `sw.js` | Service worker para uso offline |
-| `manifest.webmanifest` | Metadados de instalação |
+| `index.html` | Screen layout and the new-expense dialog |
+| `app.js` | Business rules, rendering and storage |
+| `styles.css` | Styling |
+| `sw.js` | Service worker for offline use |
+| `manifest.webmanifest` | Install metadata |
