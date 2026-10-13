@@ -21,6 +21,11 @@ npx serve .
 
 Or open `index.html` directly in a browser for a quick preview. To install it as an app, serve it over HTTPS or `localhost`.
 
+## Install on a phone
+
+1. Open the app in Safari (iPhone) or Chrome (Android).
+2. Tap **Share** → **Add to Home Screen** (iPhone) or the browser menu → **Install app** (Android).
+
 ## Privacy
 
 Expenses are stored only in the browser's `localStorage`. Nothing is sent to a server. Clearing browser data deletes the records, so export a backup regularly.

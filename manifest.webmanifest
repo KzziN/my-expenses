@@ -1,8 +1,8 @@
 {
-  "name": "Meus gastos",
-  "short_name": "Gastos",
-  "description": "Seus gastos organizados, mês a mês.",
-  "lang": "pt-BR",
+  "name": "My Expenses",
+  "short_name": "Expenses",
+  "description": "Track your expenses month by month.",
+  "lang": "en",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -10,4 +10,3 @@
   "theme_color": "#174b3d",
   "icons": [{ "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }]
 }
-
